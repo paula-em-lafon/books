@@ -61,5 +61,3 @@ class AutoresHasLibros(models.Model):
 		null=False,
 		on_delete=models.CASCADE
 	)
-
-

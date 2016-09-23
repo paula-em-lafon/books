@@ -1,14 +1,20 @@
-<h1>Editoriales</h1>
+{% extends 'base.html' %}
 
+{% block titl%}
+	<h1>Editoriales</h1>
+{% endblock titl%}
+
+{% block links%}
 <ul>
 	<li><a href="/editoriales">Editoriales</a></li>
 </ul>
+{% endblock links%}
 
 {% block content %}
 
 <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Send message" />
+    <input type="submit" value="Crear" />
 </form>
 
 {% endblock content%}

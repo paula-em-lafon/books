@@ -13,6 +13,14 @@ class LibroForm(forms.ModelForm):
 		model = Libros
 		fields = ('isbn', 'titulo','sinopsis', 'n_paginas', 'editorial')
 
+class CheckedLibrosForm(forms.Form):
+    # This might be better as a ModelChoiecField
+    ids = forms.MultipleChoiceField()#
+
+    def __init__(self, libros_id, *args, **kwargs):
+        super(MyForm, self).__init__(*args, **kwargs)
+        self.fields['ids'].choices = libros_id
+
 class EditorialForm(forms.ModelForm):
 	class Meta:
 		model= Editoriales
@@ -26,3 +34,4 @@ class LibroMultiForm(multiform.MultiForm):
 		('libro', LibroForm),
 		('autor', ExistingAutorForm),
 	))
+

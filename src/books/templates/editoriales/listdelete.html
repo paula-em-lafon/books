@@ -1,9 +1,15 @@
-<h1>Editoriales</h1>
+{% extends 'base.html' %}
 
+{% block titl%}
+	<h1>Editoriales</h1>
+{% endblock titl%}
+
+{% block links%}
 <ul>
 	<li><a href="/editoriales/nuevo">Crear Ediorial</a></li>
 	<li><a href="/">Libros</a></li>
 </ul>
+{% endblock links%}
 
 {% block content %}
 
@@ -23,6 +29,6 @@
 	    {% endfor %}
 	</table>
 	{% csrf_token %}
-	<button type="submit" name="perform" value='delete' formaction="delete/">Delete</button>
+	<button type="submit" name="perform" value='delete' formaction="delete/">Borrar</button>
 <endform>
 {% endblock %}
