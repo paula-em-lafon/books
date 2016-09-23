@@ -1,0 +1,27 @@
+<h1>Autores</h1>
+
+<ul>
+	<li><a href="/autores/nuevo">Crear Autor</a></li>
+	<li><a href="/">Libros</a></li>
+</ul>
+
+
+{% block content %}
+
+{% load catalogue_tags %}
+	<table>
+		<tr>
+	        <td>Check</td>
+			<td>Autor</td>
+		<form action = "." method="post" accept-charset="utf-8">
+	    {% for item in item_list %}
+	        {# <li>Item1 (<a href="{% url 'mydelete' pk=libro.pk %}">Delete</a>)</li> #}
+	        <tr>
+	        	<td><input type="checkbox" name="checkboxed" value="{{item.pk}}"></td>
+	        	<td>{{item}}</td>
+	    {% endfor %}
+	</table>
+	{% csrf_token %}
+	<button type="submit" name="perform" value='delete' formaction="delete/">Borrar</button>
+<endform>
+{% endblock %}
