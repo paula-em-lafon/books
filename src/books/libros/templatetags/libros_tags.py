@@ -1,5 +1,5 @@
 from django import template
-from books.catalogue.models import Libros
+from books.libros.models import Libros
 register = template.Library()
 
 

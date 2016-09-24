@@ -30,7 +30,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'books.catalogue',
+    'books.editoriales',
+    'books.libros',
+    'books.autores',
     'betterforms',
     'django.contrib.admin',
     'django.contrib.auth',
